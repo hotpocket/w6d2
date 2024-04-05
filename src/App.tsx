@@ -3,9 +3,9 @@ import "./App.css";
 import { Pokemon } from "./Components/Pokemon";
 
 function App() {
-  const url = "https://pokeapi.co/api/v2/";
-  const [poks, setPoks] = useState([]);
+  const url = "https://pokeapi.co/api/v2/pokemon?offset=1&limit=1302";
 
+  const [poks, setPoks] = useState([]);
   const [info, setInfo] = useState();
 
   useEffect(() => {
@@ -18,8 +18,9 @@ function App() {
 
   return (
     <>
+      <h2> Hover over each X to see Pokemon!</h2>
       {poks.map((pok, index) => (
-        <Pokemon key={index} name={pok.name} url={pok.url} setInfo={setInfo} />
+        <Pokemon key={index} url={pok.url} setInfo={setInfo} />
       ))}
       {info && (
         <div>
