@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { Pok } from "../App";
 
 type Props = {
   url: string;
-  setInfo: any;
+  setInfo: React.Dispatch<React.SetStateAction<Pok | null>>;
 };
 
 export const Pokemon = ({ url, setInfo }: Props) => {
@@ -15,7 +15,6 @@ export const Pokemon = ({ url, setInfo }: Props) => {
   return (
     <a
       onMouseEnter={fetchInfo}
-      class="pokemon-"
       style={{
         display: "inline-block",
         letterSpacing: "-1px",

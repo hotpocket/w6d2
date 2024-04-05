@@ -2,11 +2,19 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Pokemon } from "./Components/Pokemon";
 
+export interface Pok {
+  name: string;
+  sprites: {
+    front_default: string;
+  };
+  url: string;
+}
+
 function App() {
   const url = "https://pokeapi.co/api/v2/pokemon?offset=1&limit=1302";
 
   const [poks, setPoks] = useState([]);
-  const [info, setInfo] = useState();
+  const [info, setInfo] = useState<Pok | null>(null);
 
   useEffect(() => {
     fetch(url + "pokemon")
@@ -19,7 +27,7 @@ function App() {
   return (
     <>
       <h2> Hover over each | to see Pokemon!</h2>
-      {poks.map((pok, index) => (
+      {poks.map((pok: Pok, index) => (
         <Pokemon key={index} url={pok.url} setInfo={setInfo} />
       ))}
       {info && (
