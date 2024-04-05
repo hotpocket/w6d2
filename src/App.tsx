@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <h2> Hover over each X to see Pokemon!</h2>
+      <h2> Hover over each | to see Pokemon!</h2>
       {poks.map((pok, index) => (
         <Pokemon key={index} url={pok.url} setInfo={setInfo} />
       ))}

@@ -13,8 +13,15 @@ export const Pokemon = ({ url, setInfo }: Props) => {
   };
   // return <button onClick={fetchInfo}>{name}</button>;
   return (
-    <a onMouseEnter={fetchInfo} style={{ display: "inline-block" }}>
-      X
+    <a
+      onMouseEnter={fetchInfo}
+      class="pokemon-"
+      style={{
+        display: "inline-block",
+        letterSpacing: "-1px",
+      }}
+    >
+      |
     </a>
   );
 };
